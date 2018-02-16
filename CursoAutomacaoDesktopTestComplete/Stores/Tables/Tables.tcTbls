@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{70FC6ED0-A122-4A26-9B64-EDDBB2F11A49}" version="12.0">
+	<children>
+		<child name="DadosDaGridAposInserirUmaOrder" key="{EC70E9B5-FD70-46BB-A437-2D8B4289C238}" type="Table" typeId="{F1D3EE30-C2A8-4AFF-801C-1D39E2C902F0}" pluginName="Stores">
+			<data path="DadosDaGridAposInserirUmaOrder.tcTbl" />
+		</child>
+	</children>
+	<folders />
+</Root>

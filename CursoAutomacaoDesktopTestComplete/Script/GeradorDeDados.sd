@@ -1,0 +1,10 @@
+﻿procedure GerarDatas();
+var
+  DataAtual : string;
+begin
+  // Gerar datas dinamicamente
+  
+  DataAtual := aqConvert.DateTimeToFormatStr( aqDateTime.Today, '%m%d%Y' );
+  
+  ProjectSuite.Variables.DataAtual := DataAtual;
+end;

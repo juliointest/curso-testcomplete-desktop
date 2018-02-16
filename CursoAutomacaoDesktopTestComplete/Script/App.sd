@@ -1,0 +1,10 @@
+﻿procedure AbrirOrders();
+begin
+  TestedApps.Orders.Run;
+end;
+
+procedure FecharOrders();
+begin
+  // Aliases.Orders.MainForm.Close;
+  TestedApps.Orders.Terminate;
+end;

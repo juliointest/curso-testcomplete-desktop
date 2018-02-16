@@ -1,0 +1,7 @@
+**/*.bak
+**/*.tcVis
+**/Log/*
+**/*.bak
+**/*.tcLS
+**/*.tcCfgExtender
+**/*.tcLogs

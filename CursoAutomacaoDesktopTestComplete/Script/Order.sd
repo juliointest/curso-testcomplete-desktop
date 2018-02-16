@@ -1,0 +1,93 @@
+﻿uses
+  Checkpoint;
+procedure EscolherProduto(pProduto : string);
+begin
+  Aliases.Orders.OrderFrm.Product_ComboBox.ClickItem(pProduto);
+end;
+
+procedure DigitarQuantidade(pQuantidade : string);
+begin
+  Aliases.Orders.OrderFrm.Qty_Edit.Keys(pQuantidade);
+end;
+
+procedure ValidarPreco(pPreco : string);
+begin
+  aqObject.CheckProperty(Aliases.Orders.OrderFrm.Price_Edit, 'wText', cmpEqual, pPreco);
+end;
+
+procedure ValidarDesconto(pDesconto : string);
+begin
+  aqObject.CheckProperty(Aliases.Orders.OrderFrm.Discount_Edit, 'wText', cmpEqual, pDesconto);
+end;
+
+procedure ValidarTotal(pTotal : string);
+begin
+  aqObject.CheckProperty(Aliases.Orders.OrderFrm.Total_Edit, 'wText', cmpEqual, pTotal);
+end;
+
+procedure DigitarDataOrder(pDataOrder : string);
+begin
+  Aliases.Orders.OrderFrm.Date_Edit.Keys(pDataOrder);
+end;
+
+procedure ClicarCancelar();
+begin
+  Aliases.Orders.OrderFrm.CancelButton.ClickButton;
+end;
+
+procedure ValidarProduto(pProduto : string);
+begin
+  Checkpoint.ValidarSeContem(Aliases.Orders.OrderFrm.Product_ComboBox.wText, pProduto);
+end;
+
+procedure DigitarNome(pNome : string);
+begin
+  Aliases.Orders.OrderFrm.CustomerName_Edit.SetText(pNome);
+end;
+
+procedure DigitarRua(pRua : string);
+begin
+  Aliases.Orders.OrderFrm.Rua_Edit.SetText(pRua);
+end;
+
+procedure DigitarCidade(pCidade : string);
+begin
+  Aliases.Orders.OrderFrm.City_Edit.SetText(pCidade);
+end;
+
+procedure DigitarEstado(pEstado : string);
+begin
+  Aliases.Orders.OrderFrm.State_Edit.SetText(pEstado);
+end;
+
+procedure DigitarCep(pCep : string);
+begin
+  Aliases.Orders.OrderFrm.Zip_Edit.SetText(pCep);
+end;
+
+procedure EscolherCartao(pCartao);
+begin
+  if pCartao = 'Visa' then
+    Aliases.Orders.OrderFrm.VISA_RadioButton.Click;
+  // Mastercard
+  if pCartao = 'Mastercard' then
+    Aliases.Orders.OrderFrm.MasterCard_RadioButton.Click;
+  // Amex
+  if pCartao = 'Amex' then
+    Aliases.Orders.OrderFrm.AE_RadioButton.Click;
+end;
+
+procedure DigitarNumeroCartao(pNumeroCartao : string);
+begin
+  Aliases.Orders.OrderFrm.CardNo_Edit.SetText(pNumeroCartao);
+end;
+
+procedure DigitarDataExpiracao(pDataExpiracao : string);
+begin
+  Aliases.Orders.OrderFrm.ExpireDate_Edit.Keys(pDataExpiracao);
+end;
+
+procedure ClicarOk();
+begin
+  Aliases.Orders.OrderFrm.OKButton.Click;
+end;

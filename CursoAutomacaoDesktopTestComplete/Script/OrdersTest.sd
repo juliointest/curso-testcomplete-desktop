@@ -1,0 +1,110 @@
+﻿uses
+  App,
+  Checkpoint,
+  GeradorDeDados,
+  Order,
+  Principal;
+  
+procedure CalcularValorDoDescontoTotalEProduto;
+var
+  Item : integer;
+  ArquivoCSV : OleVariant;
+begin
+  // Abertura da aplicacao
+  App.AbrirOrders;
+  
+  // Acesso ao formulario de Orders
+  Principal.AcessarFormularioOrders;
+  
+  // Laco de repeticao
+//  for Item := 0 to Project.Variables.DadosDeTeste.RowCount - 1 do
+//  begin
+//    // Preenchemos o produto e quantidade
+//    Order.EscolherProduto(Project.Variables.DadosDeTeste.Produto[Item]);
+//    Order.DigitarQuantidade(Project.Variables.DadosDeTeste.Quantidade[Item]);
+//  
+//    // Validar os valores contidos nos campos
+//    Order.ValidarPreco(Project.Variables.DadosDeTeste.PrecoEsperado[Item]);
+//    Order.ValidarDesconto(Project.Variables.DadosDeTeste.DescontoEsperado[Item]);
+//    Order.ValidarTotal(Project.Variables.DadosDeTeste.TotalEsperado[Item]);
+//  end;
+  // Fim do laco de repeticao  
+  
+  
+  // Laco de Repeticao
+  ArquivoCSV := DDT.CSVDriver('C:\\Temp\\dados_de_teste.csv');
+  while Not ArquivoCSV.EOF do
+  begin
+    // Preenchemos o produto e quantidade
+    Order.EscolherProduto(ArquivoCSV.Value['produto']);
+    Order.DigitarQuantidade(ArquivoCSV.Value['quantidade']);
+  
+    // Validar os valores contidos nos campos
+    Order.ValidarPreco(ArquivoCSV.Value['precoesperado']);
+    Order.ValidarDesconto(ArquivoCSV.Value['descontoesperado']);
+    Order.ValidarTotal(ArquivoCSV.Value['totalesperado']);
+    
+    // Indo para a proxima linha
+    ArquivoCSV.Next;
+  end;
+  // Fim do Laco  
+      
+  // Digitar a data
+  Order.DigitarDataOrder(ProjectSuite.Variables.DataAtual);
+  
+  // Clicar no botao Cancelar
+  Order.ClicarCancelar();
+  
+  // Clique no botao Fechar do Orders Delphi
+  App.FecharOrders();
+end;
+
+procedure ValidarPrecoMyMoney;
+begin
+  // Abertura da aplicacao
+  App.AbrirOrders;
+  
+  // Acesso ao formulario de Orders
+  Principal.AcessarFormularioOrders;
+  
+  // Validar os valores contidos nos campos
+  Order.ValidarProduto('My');
+  Order.ValidarPreco('$100');
+  
+  // Clicar no botao Cancelar
+  Order.ClicarCancelar();
+  
+  // Clique no botao Fechar do Orders Delphi
+  App.FecharOrders();
+end;
+
+procedure ValidarValores();
+begin
+  Checkpoint.ValidarIgualdade('45', '45');
+end;
+
+procedure ValidarInsercaoOrderNaGrid();
+begin
+  App.AbrirOrders;
+  Principal.AcessarFormularioOrders;
+  
+  Order.EscolherProduto('MyMoney');
+  Order.DigitarQuantidade('10');
+  Order.DigitarDataOrder('02032018');
+  Order.DigitarNome('Julio');
+  Order.DigitarRua('Rua A');
+  Order.DigitarCidade('Cidade');
+  Order.DigitarEstado('Sao Paulo');
+  Order.DigitarCep('99999999');
+  Order.EscolherCartao('Amex');
+  Order.DigitarNumeroCartao('1111 2222 3333 4444');
+  Order.DigitarDataExpiracao('02032019');
+  Order.ClicarOk;
+  
+  Principal.ValidarQuantidadeDeItensNaGrid(1);
+  Principal.ValidarColunaNome('Julio');
+  Principal.ValidarColunaProduto('MyMoney');
+  Principal.ValidarDadosDaGrid;
+  
+  App.FecharOrders;
+end;

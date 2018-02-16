@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" version="11.40">
+	<children>
+		<child name="OrdersTest" key="{9D1A769C-55AE-4CDC-87CF-421F04E06D9C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="OrdersTest.sd" />
+		</child>
+		<child name="App" key="{B8B48E90-E1A8-43D6-BBCF-6311E769B6AE}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="App.sd" />
+		</child>
+		<child name="Principal" key="{7F40FA95-9DEF-4D98-AE3F-131553F5CF9D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Principal.sd" />
+		</child>
+		<child name="Order" key="{0CA8ACE7-08AD-4810-922F-E0594CF8A405}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Order.sd" />
+		</child>
+		<child name="GeradorDeDados" key="{E3C67279-4F1D-4155-8CF0-29A7FFDE25AA}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="GeradorDeDados.sd" />
+		</child>
+		<child name="Checkpoint" key="{34E3D1A4-04FD-4634-9149-DC57A9238B2E}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Checkpoint.sd" />
+		</child>
+	</children>
+	<folders>
+		<folder caption="Modulos" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{B8B48E90-E1A8-43D6-BBCF-6311E769B6AE}" />
+				<ref key="{7F40FA95-9DEF-4D98-AE3F-131553F5CF9D}" />
+				<ref key="{0CA8ACE7-08AD-4810-922F-E0594CF8A405}" />
+			</references>
+		</folder>
+		<folder caption="Testes" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{9D1A769C-55AE-4CDC-87CF-421F04E06D9C}" />
+			</references>
+		</folder>
+		<folder caption="Util" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{E3C67279-4F1D-4155-8CF0-29A7FFDE25AA}" />
+				<ref key="{34E3D1A4-04FD-4634-9149-DC57A9238B2E}" />
+			</references>
+		</folder>
+	</folders>
+</Root>

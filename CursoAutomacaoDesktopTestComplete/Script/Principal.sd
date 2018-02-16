@@ -1,0 +1,42 @@
+﻿uses
+  Checkpoint;
+  
+procedure AcessarFormularioOrders();
+begin
+  Aliases.Orders.MainForm.MainMenu.Click('Orders|[0]');
+end;
+
+procedure ValidarQuantidadeDeItensNaGrid(pQuantidade : integer);
+begin
+  // Checkpoint Personalizado
+  Checkpoint.ValidarIgualdade(Aliases.Orders.MainForm.GridDePedidos.wItemCount, pQuantidade);
+end;
+
+procedure ValidarColunaNome(pNomeEsperado : string);
+var 
+  primeiraLinha, colunaNome : integer;
+begin
+  // Documentacao
+  primeiraLinha := 0;
+  colunaNome := 0;
+  
+  // Validando os dados
+  Checkpoint.ValidarIgualdade(Aliases.Orders.MainForm.GridDePedidos.wItem[primeiraLinha, colunaNome], pNomeEsperado);
+end;
+
+procedure ValidarColunaProduto(pProdutoEsperado);
+var 
+  primeiraLinha, colunaProduto : integer;
+begin
+  // Documentacao
+  primeiraLinha := 0;
+  colunaProduto := 1;
+  
+  // Validando os dados
+  Checkpoint.ValidarIgualdade(Aliases.Orders.MainForm.GridDePedidos.wItem[primeiraLinha, colunaProduto], pProdutoEsperado);
+end;
+
+procedure ValidarDadosDaGrid();
+begin
+  Tables.DadosDaGridAposInserirUmaOrder.Check;
+end;

@@ -1,0 +1,23 @@
+﻿procedure ValidarIgualdade(pValorAtual, pValorEsperado : string);
+begin
+  // Conversao de Valores
+  pValorAtual := aqConvert.VarToStr(pValorAtual);
+  pValorEsperado := aqConvert.VarToStr(pValorEsperado);
+  
+  if pValorAtual = pValorEsperado then
+    Log.Checkpoint(pValorAtual + ' e igual a ' + pValorEsperado)
+  else
+    Log.Error(pValorAtual + ' nao e igual a ' + pValorEsperado);
+end;
+
+procedure ValidarSeContem(pValorAtual, pParteDopTexto : string);
+begin
+  // Conversao de Valores
+  pValorAtual := aqConvert.VarToStr(pValorAtual);
+  pParteDopTexto := aqConvert.VarToStr(pParteDopTexto);
+  
+  if aqString.Find(pValorAtual, pParteDopTexto) >= 0 then
+    Log.Checkpoint(pParteDopTexto + ' foi encontrada dentro de ' + pValorAtual)  
+  else
+    Log.Error(pParteDopTexto + ' nao foi encontrada dentro de ' + pValorAtual);
+end;
